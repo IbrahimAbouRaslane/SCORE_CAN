@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 2022_01_06_155408) do
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
+  create_table "matches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.datetime "date"
+    t.integer "team_a_id"
+    t.integer "team_b_id"
+    t.integer "score_a"
+    t.integer "score_b"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
