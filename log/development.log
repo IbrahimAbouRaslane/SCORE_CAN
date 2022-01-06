@@ -510,3 +510,371 @@ FOREIGN KEY ("team_id")
   [1m[36mTRANSACTION (23.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (36.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (32.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (433.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_development"[0m
+  [1m[35m (327.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_test"[0m
+  [1m[35m (2442.0ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_development" ENCODING = 'unicode'[0m
+  [1m[35m (883.0ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_test" ENCODING = 'unicode'[0m
+  [1m[35m (146.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (152.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to EnablePgCrypto (20220106115131)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (113.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106115131"]]
+  [1m[36mTRANSACTION (24.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMatches (20220106143745)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (94.8ms)[0m  [1m[35mCREATE TABLE "matches" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "date" timestamp, "team_a_id" integer, "team_b_id" integer, "score_a" integer, "score_b" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106143745"]]
+  [1m[36mTRANSACTION (25.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20220106155408)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (143.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (76.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (43.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106155408"]]
+  [1m[36mTRANSACTION (21.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePredictions (20220106163150)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE TABLE "predictions" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "score_a" integer, "score_b" integer, "points" integer, "predicted_result" integer, "is_good_result" boolean, "is_exact_score" boolean, "match_id" uuid NOT NULL, "user_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_efbcaaab9d"
+FOREIGN KEY ("match_id")
+  REFERENCES "matches" ("id")
+, CONSTRAINT "fk_rails_7eed2ccc94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (42.5ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_match_id" ON "predictions" ("match_id")[0m
+  [1m[35m (43.5ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_user_id" ON "predictions" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163150"]]
+  [1m[36mTRANSACTION (20.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20220106163228)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (171.5ms)[0m  [1m[35mCREATE TABLE "teams" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "flag_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163228"]]
+  [1m[36mTRANSACTION (18.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePools (20220106163249)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (130.5ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "team_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b772931f2f"
+FOREIGN KEY ("team_id")
+  REFERENCES "teams" ("id")
+)[0m
+  [1m[35m (84.1ms)[0m  [1m[35mCREATE INDEX "index_pools_on_team_id" ON "pools" ("team_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163249"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-06 16:51:04.455639"], ["updated_at", "2022-01-06 16:51:04.455639"]]
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-01-06 16:51:55 +0000
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/daouda/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/daouda/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 33.8ms | Allocations: 438)
+Completed 200 OK in 98ms (Views: 41.7ms | ActiveRecord: 0.0ms | Allocations: 3649)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2022-01-06 16:52:19 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign_in"):
+  
+Started GET "//users/sign_in" for 127.0.0.1 at 2022-01-06 16:52:48 +0000
+  
+NameError (uninitialized constant ApplicationController
+Did you mean?  ApplicationRecord):
+  
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4.4) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+devise (4.8.1) app/controllers/devise_controller.rb:4:in `<main>'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/loaded_features_index.rb:100:in `register'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.5.3) lib/zeitwerk/kernel.rb:27:in `require'
+devise (4.8.1) app/controllers/devise/sessions_controller.rb:3:in `<main>'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/loaded_features_index.rb:100:in `register'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.5.3) lib/zeitwerk/kernel.rb:27:in `require'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:288:in `const_get'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:288:in `block in constantize'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `each'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `inject'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `constantize'
+activesupport (6.1.4.4) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.4.4) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.4.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "//users/sign_up" for 127.0.0.1 at 2022-01-06 16:53:52 +0000
+  
+NameError (uninitialized constant ApplicationController
+Did you mean?  ApplicationRecord):
+  
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4.4) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+devise (4.8.1) app/controllers/devise_controller.rb:4:in `<main>'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/loaded_features_index.rb:100:in `register'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.5.3) lib/zeitwerk/kernel.rb:27:in `require'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:3:in `<main>'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/loaded_features_index.rb:100:in `register'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.5.3) lib/zeitwerk/kernel.rb:27:in `require'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:288:in `const_get'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:288:in `block in constantize'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `each'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `inject'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `constantize'
+activesupport (6.1.4.4) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.4.4) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.4.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/sign_in" for 127.0.0.1 at 2022-01-06 16:57:26 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/sign_in"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-06 16:58:08 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/daouda/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/daouda/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.5ms | Allocations: 215)
+Completed 200 OK in 18ms (Views: 15.5ms | Allocations: 964)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-06 16:58:21 +0000
+  
+NameError (uninitialized constant ApplicationController
+Did you mean?  ApplicationRecord):
+  
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4.4) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+devise (4.8.1) app/controllers/devise_controller.rb:4:in `<main>'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/loaded_features_index.rb:100:in `register'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.5.3) lib/zeitwerk/kernel.rb:27:in `require'
+devise (4.8.1) app/controllers/devise/sessions_controller.rb:3:in `<main>'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/loaded_features_index.rb:100:in `register'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.9.3) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.5.3) lib/zeitwerk/kernel.rb:27:in `require'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:288:in `const_get'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:288:in `block in constantize'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `each'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `inject'
+activesupport (6.1.4.4) lib/active_support/inflector/methods.rb:284:in `constantize'
+activesupport (6.1.4.4) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.4.4) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.4.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.4.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-06 17:03:03 +0000
+  
+NameError (uninitialized constant ApplicationController):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-06 17:05:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 35.3ms | Allocations: 602)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 299.1ms | Allocations: 7280)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 681.1ms | Allocations: 23061)
+Completed 200 OK in 767ms (Views: 701.7ms | ActiveRecord: 26.8ms | Allocations: 32887)
+
+
+Started GET "/packs/js/application-72cdcd9f4871cd190c11.js" for 127.0.0.1 at 2022-01-06 17:05:01 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-72cdcd9f4871cd190c11.js"):
+  
