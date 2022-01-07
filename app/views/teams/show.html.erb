@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <td>Team</td>
+  </tr>
+  <tr>
+    <td><%= @team.name %></td>
+  </tr>
+    <td><%= link_to 'edit', edit_pool_path(@team)%></td>
+    <td><%= link_to 'delete', pools_path(@team), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+
+</table>
