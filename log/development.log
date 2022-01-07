@@ -591,3 +591,1076 @@ Started GET "/packs/js/application-72cdcd9f4871cd190c11.js" for 127.0.0.1 at 202
   
 ActionController::RoutingError (No route matches [GET] "/packs/js/application-72cdcd9f4871cd190c11.js"):
   
+Started GET "/" for 127.0.0.1 at 2022-01-07 14:39:26 +0000
+  [1m[35m (374.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ibrahim/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ibrahim/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.9ms | Allocations: 438)
+Completed 200 OK in 51ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 3649)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-01-07 15:02:44 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 7.1ms | Allocations: 222)
+  Rendered devise/shared/_links.html.erb (Duration: 22.2ms | Allocations: 529)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2366.6ms | Allocations: 7481)
+  Rendered layout layouts/application.html.erb (Duration: 3815.3ms | Allocations: 22512)
+Completed 200 OK in 7505ms (Views: 3975.5ms | ActiveRecord: 2762.9ms | Allocations: 31878)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-01-07 15:03:12 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.3ms | Allocations: 989)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 104)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3080)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 4822)
+Completed 200 OK in 88ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 8908)
+
+
+Started GET "/pools/new" for 127.0.0.1 at 2022-01-07 16:02:34 +0000
+Processing by PoolsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 21.1ms | Allocations: 1365)
+  Rendered pools/new.html.erb within layouts/application (Duration: 23.0ms | Allocations: 1676)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 1742)
+Completed 500 Internal Server Error in 407ms (ActiveRecord: 166.8ms | Allocations: 9518)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with model: pool do |form|%>
+  <div>
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :_name %>
+    <% if pool.errors[:name] %>
+      <span style='color: red'><%= pool.errors[:name][0] %></span>
+    <% end %>
+  </div>
+
+<button class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 rounded">
+    <%= form.submit 'Create account' %>
+  </button>
+  <% end %>
+<% end %>
+):
+1:    <%= form_with model: pool do |form|%>
+2:      <div>
+3:        <%= form.label :name, 'Name' %>
+4:        <%= form.text_field :_name %>
+5:        <% if pool.errors[:name] %>
+6:          <span style='color: red'><%= pool.errors[:name][0] %></span>
+7:        <% end %>
+8:      </div>
+9:    
+10:    <button class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 rounded">
+11:        <%= form.submit 'Create account' %>
+12:      </button>
+13:      <% end %>
+14:    <% end %>
+  
+app/views/pools/_form.html.erb:16: syntax error, unexpected `end', expecting end-of-input
+app/views/pools/_form.html.erb:16: syntax error, unexpected `end', expecting end-of-input
+app/views/pools/_form.html.erb:16: syntax error, unexpected `end', expecting end-of-input
+app/views/pools/_form.html.erb:16: syntax error, unexpected `end', expecting end-of-input
+app/views/pools/_form.html.erb:16: syntax error, unexpected `end', expecting end-of-input
+app/views/pools/_form.html.erb:16: syntax error, unexpected `end', expecting end-of-input
+app/views/pools/new.html.erb:2
+Started GET "/pools/new" for 127.0.0.1 at 2022-01-07 16:02:59 +0000
+Processing by PoolsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 10.2ms | Allocations: 4784)
+  Rendered pools/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 4878)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4942)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 5417)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pool' for #<ActionView::Base:0x0000000000b798>
+Did you mean?  @pool):
+    1: <%= form_with model: pool do |form|%>
+    2:   <div>
+    3:     <%= form.label :name, 'Name' %>
+    4:     <%= form.text_field :_name %>
+  
+app/views/pools/_form.html.erb:1
+app/views/pools/new.html.erb:2
+Started GET "/pools/new" for 127.0.0.1 at 2022-01-07 16:03:26 +0000
+Processing by PoolsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 2.2ms | Allocations: 745)
+  Rendered pools/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1043)
+  Rendered layout layouts/application.html.erb (Duration: 167.7ms | Allocations: 14279)
+Completed 200 OK in 171ms (Views: 170.1ms | ActiveRecord: 0.0ms | Allocations: 15506)
+
+
+Started GET "/pools/new??pp=disable" for 127.0.0.1 at 2022-01-07 16:15:05 +0000
+Processing by PoolsController#new as HTML
+  Parameters: {"?pp"=>"disable"}
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 1.6ms | Allocations: 480)
+  Rendered pools/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 759)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2800)
+Completed 200 OK in 13ms (Views: 10.9ms | Allocations: 3989)
+
+
+Started GET "/pools/new??pp=disable" for 127.0.0.1 at 2022-01-07 16:15:18 +0000
+Processing by PoolsController#new as HTML
+  Parameters: {"?pp"=>"disable"}
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 6.5ms | Allocations: 480)
+  Rendered pools/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 758)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 2791)
+Completed 200 OK in 25ms (Views: 22.6ms | Allocations: 3981)
+
+
+Started GET "/pools/new??pp=disable" for 127.0.0.1 at 2022-01-07 16:15:52 +0000
+Processing by PoolsController#new as HTML
+  Parameters: {"?pp"=>"disable"}
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 1.9ms | Allocations: 483)
+  Rendered pools/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 764)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2810)
+Completed 200 OK in 13ms (Views: 11.4ms | Allocations: 4006)
+
+
+Started GET "/pools/new??pp=disable" for 127.0.0.1 at 2022-01-07 16:16:08 +0000
+Processing by PoolsController#new as HTML
+  Parameters: {"?pp"=>"disable"}
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 1.5ms | Allocations: 481)
+  Rendered pools/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 758)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2791)
+Completed 200 OK in 13ms (Views: 11.3ms | Allocations: 3980)
+
+
+Started GET "/pools/new??pp=disable" for 127.0.0.1 at 2022-01-07 16:28:12 +0000
+Processing by PoolsController#new as HTML
+  Parameters: {"?pp"=>"disable"}
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 1.4ms | Allocations: 487)
+  Rendered pools/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 775)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 2829)
+Completed 200 OK in 103ms (Views: 101.0ms | Allocations: 4025)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 16:28:52 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create account"}
+[31mUnpermitted parameter: :_name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 1.0ms | Allocations: 280)
+  Rendered pools/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 355)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2176)
+Completed 200 OK in 1996ms (Views: 6.5ms | ActiveRecord: 137.4ms | Allocations: 9259)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:29:55 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (61.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 64.2ms | Allocations: 798)
+  Rendered layout layouts/application.html.erb (Duration: 69.3ms | Allocations: 2832)
+Completed 200 OK in 74ms (Views: 10.8ms | ActiveRecord: 61.4ms | Allocations: 4065)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:30:08 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 520)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2352)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 2741)
+
+
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (49.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (703.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_development"[0m
+  [1m[35m (381.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_test"[0m
+  [1m[35m (3169.4ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_development" ENCODING = 'unicode'[0m
+  [1m[35m (1059.9ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_test" ENCODING = 'unicode'[0m
+  [1m[35m (153.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (131.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to EnablePgCrypto (20220106115131)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (198.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106115131"]]
+  [1m[36mTRANSACTION (46.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMatches (20220106143745)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (93.0ms)[0m  [1m[35mCREATE TABLE "matches" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "date" timestamp, "team_a_id" integer, "team_b_id" integer, "score_a" integer, "score_b" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106143745"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20220106155408)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (117.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (53.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (76.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106155408"]]
+  [1m[36mTRANSACTION (17.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePredictions (20220106163150)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.3ms)[0m  [1m[35mCREATE TABLE "predictions" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "score_a" integer, "score_b" integer, "points" integer, "predicted_result" integer, "is_good_result" boolean, "is_exact_score" boolean, "match_id" uuid NOT NULL, "user_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_efbcaaab9d"
+FOREIGN KEY ("match_id")
+  REFERENCES "matches" ("id")
+, CONSTRAINT "fk_rails_7eed2ccc94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (72.1ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_match_id" ON "predictions" ("match_id")[0m
+  [1m[35m (66.4ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_user_id" ON "predictions" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163150"]]
+  [1m[36mTRANSACTION (22.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20220106163228)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (196.0ms)[0m  [1m[35mCREATE TABLE "teams" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "flag_url" character varying, "pool_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0f545fe9e7"
+FOREIGN KEY ("pool_id")
+  REFERENCES "pools" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTeams (20220106163228)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (144.2ms)[0m  [1m[35mCREATE TABLE "teams" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "flag_url" character varying, "pool_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0f545fe9e7"
+FOREIGN KEY ("pool_id")
+  REFERENCES "pools" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-07 16:39:18.826576"], ["updated_at", "2022-01-07 16:39:18.826576"]]
+  [1m[36mTRANSACTION (21.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (357.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_development"[0m
+  [1m[35m (348.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_test"[0m
+  [1m[35m (1102.0ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_development" ENCODING = 'unicode'[0m
+  [1m[35m (1696.3ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_test" ENCODING = 'unicode'[0m
+  [1m[35m (126.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (141.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to EnablePgCrypto (20220106115131)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106115131"]]
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMatches (20220106143745)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (59.4ms)[0m  [1m[35mCREATE TABLE "matches" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "date" timestamp, "team_a_id" integer, "team_b_id" integer, "score_a" integer, "score_b" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106143745"]]
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20220106155408)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (137.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (53.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (54.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106155408"]]
+  [1m[36mTRANSACTION (18.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePredictions (20220106163150)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (84.3ms)[0m  [1m[35mCREATE TABLE "predictions" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "score_a" integer, "score_b" integer, "points" integer, "predicted_result" integer, "is_good_result" boolean, "is_exact_score" boolean, "match_id" uuid NOT NULL, "user_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_efbcaaab9d"
+FOREIGN KEY ("match_id")
+  REFERENCES "matches" ("id")
+, CONSTRAINT "fk_rails_7eed2ccc94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (63.6ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_match_id" ON "predictions" ("match_id")[0m
+  [1m[35m (88.3ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_user_id" ON "predictions" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163150"]]
+  [1m[36mTRANSACTION (52.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20220106163228)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (109.2ms)[0m  [1m[35mCREATE TABLE "teams" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "flag_url" character varying, "pool_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0f545fe9e7"
+FOREIGN KEY ("pool_id")
+  REFERENCES "pools" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (11.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePools (20220106163228)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (180.2ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163228"]]
+  [1m[36mTRANSACTION (23.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20220106163249)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (166.8ms)[0m  [1m[35mCREATE TABLE "teams" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "flag_url" character varying, "pool_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0f545fe9e7"
+FOREIGN KEY ("pool_id")
+  REFERENCES "pools" ("id")
+)[0m
+  [1m[35m (49.0ms)[0m  [1m[35mCREATE INDEX "index_teams_on_pool_id" ON "teams" ("pool_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163249"]]
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (25.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-07 16:44:52.359216"], ["updated_at", "2022-01-07 16:44:52.359216"]]
+  [1m[36mTRANSACTION (25.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/pools/new" for 127.0.0.1 at 2022-01-07 16:46:27 +0000
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PoolsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 7.3ms | Allocations: 956)
+  Rendered pools/new.html.erb within layouts/application (Duration: 28.7ms | Allocations: 1353)
+  Rendered layout layouts/application.html.erb (Duration: 167.3ms | Allocations: 11014)
+Completed 200 OK in 389ms (Views: 230.5ms | ActiveRecord: 5.2ms | Allocations: 17140)
+
+
+Started GET "/pools/new" for 127.0.0.1 at 2022-01-07 16:46:37 +0000
+Processing by PoolsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 0.9ms | Allocations: 279)
+  Rendered pools/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 354)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2187)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 2586)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 16:46:43 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:17:in `create'
+  [1m[36mPool Create (127.3ms)[0m  [1m[32mINSERT INTO "pools" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2022-01-07 16:46:43.349614"], ["updated_at", "2022-01-07 16:46:43.349614"]]
+  ↳ app/controllers/pools_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (26.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 161ms (ActiveRecord: 153.6ms | Allocations: 2316)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:46:43 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.5ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 743)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 2594)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.5ms | Allocations: 3127)
+
+
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPool Load (31.1ms)[0m  [1m[34mSELECT "pools".* FROM "pools" ORDER BY "pools"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPool Destroy (29.9ms)[0m  [1m[31mDELETE FROM "pools" WHERE "pools"."id" = $1[0m  [["id", "cb1a5ebc-1a1f-4d88-abb1-7b5a7ef31cea"]]
+  [1m[36mTRANSACTION (21.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPool Load (0.5ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 16:48:24 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:17:in `create'
+  [1m[36mPool Create (0.4ms)[0m  [1m[32mINSERT INTO "pools" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2022-01-07 16:48:24.398815"], ["updated_at", "2022-01-07 16:48:24.398815"]]
+  ↳ app/controllers/pools_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 42ms (ActiveRecord: 32.4ms | Allocations: 2026)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:48:24 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.5ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 684)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 2720)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.5ms | Allocations: 3923)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:48:47 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 550)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2384)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 2784)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:48:49 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 549)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2383)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 2782)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:48:49 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 540)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2372)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 2760)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:48:50 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 540)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2382)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 2772)
+
+
+  [1m[36mPool Load (0.7ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPool Load (0.6ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:50:19 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 540)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2372)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 2761)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:50:19 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 1775)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 4030)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.4ms | Allocations: 4419)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:52:29 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2283)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 4130)
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 5.4ms | Allocations: 5244)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 16:52:34 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 679)
+
+
+  
+RuntimeError (nil):
+  
+app/controllers/pools_controller.rb:17:in `create'
+Started POST "/__web_console/repl_sessions/728f874a60eca31ce9cd32f6fa305e2f/trace" for 127.0.0.1 at 2022-01-07 16:52:46 +0000
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 16:53:10 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (0.7ms)[0m  [1m[32mINSERT INTO "pools" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2022-01-07 16:53:10.795396"], ["updated_at", "2022-01-07 16:53:10.795396"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (54.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 87ms (ActiveRecord: 62.2ms | Allocations: 4861)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:53:10 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 610)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2577)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.4ms | Allocations: 3159)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:53:13 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 550)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2382)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 2770)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 16:53:14 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 550)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2382)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 2770)
+
+
+  [1m[36mPool Load (1.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPool Load (0.7ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPool Load (0.5ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPool Load (0.7ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPool Load (0.8ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPool Destroy (0.8ms)[0m  [1m[31mDELETE FROM "pools" WHERE "pools"."id" = $1[0m  [["id", "9ddfe76d-b10f-481c-8645-8fad68be53cb"]]
+  [1m[36mTRANSACTION (36.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPool Destroy (0.7ms)[0m  [1m[31mDELETE FROM "pools" WHERE "pools"."id" = $1[0m  [["id", "2d6759c1-51c0-4eb7-b5dd-adffeb58839e"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:03:49 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create pool"}
+Completed 500 Internal Server Error in 22ms (Allocations: 757)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/pool.rb:2:in `<class:Pool>'
+app/models/pool.rb:1:in `<main>'
+app/controllers/pools_controller.rb:16:in `create'
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:04:13 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (108.8ms)[0m  [1m[32mINSERT INTO "pools" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2022-01-07 17:04:13.681925"], ["updated_at", "2022-01-07 17:04:13.681925"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (26.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 312ms (ActiveRecord: 284.8ms | Allocations: 6560)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:04:13 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.6ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 591)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 2440)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.6ms | Allocations: 2959)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:04:16 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 540)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2372)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 2760)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:04:17 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.2ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 540)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2372)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 2761)
+
+
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:04:36 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool b"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (0.7ms)[0m  [1m[32mINSERT INTO "pools" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2022-01-07 17:04:36.676049"], ["updated_at", "2022-01-07 17:04:36.676049"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (64.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 77ms (ActiveRecord: 65.4ms | Allocations: 2131)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:04:36 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (1.7ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 552)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 2386)
+Completed 200 OK in 24ms (Views: 10.7ms | ActiveRecord: 1.7ms | Allocations: 2782)
+
+
+  [1m[36mPool Load (0.5ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:05:22 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool b"}, "commit"=>"Create pool"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 759)
+
+
+  
+ArgumentError (Unknown key: :presence. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  
+app/models/pool.rb:2:in `<class:Pool>'
+app/models/pool.rb:1:in `<main>'
+app/controllers/pools_controller.rb:16:in `create'
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:05:45 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool b"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 187.8ms | Allocations: 3486)
+  Rendered pools/new.html.erb within layouts/application (Duration: 213.8ms | Allocations: 3771)
+  Rendered layout layouts/application.html.erb (Duration: 217.0ms | Allocations: 5605)
+Completed 200 OK in 241ms (Views: 218.8ms | ActiveRecord: 8.1ms | Allocations: 9758)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:05:55 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool A"}, "commit"=>"Create pool"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (0.5ms)[0m  [1m[32mINSERT INTO "pools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pool A"], ["created_at", "2022-01-07 17:05:55.733573"], ["updated_at", "2022-01-07 17:05:55.733573"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (67.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 76ms (ActiveRecord: 68.1ms | Allocations: 2231)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:05:55 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 573)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2417)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 2821)
+
+
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPool Load (0.7ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPool Destroy (0.7ms)[0m  [1m[31mDELETE FROM "pools" WHERE "pools"."id" = $1[0m  [["id", "6e257033-5a90-483d-9668-58a28fed4bc5"]]
+  [1m[36mTRANSACTION (59.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPool Destroy (0.7ms)[0m  [1m[31mDELETE FROM "pools" WHERE "pools"."id" = $1[0m  [["id", "88771df1-5079-4fd2-be07-2e8cbbc4bb25"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPool Destroy (0.7ms)[0m  [1m[31mDELETE FROM "pools" WHERE "pools"."id" = $1[0m  [["id", "5186a32a-8a37-4473-bf85-7ff23dfc989c"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:08:26 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 530)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2362)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 2751)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:08:36 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 2.8ms | Allocations: 1323)
+  Rendered pools/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1398)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3219)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4675)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:08:42 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.7ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 2367)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.7ms | Allocations: 2763)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:08:47 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"_name"=>"Pool A"}, "commit"=>"Create pool"}
+[31mUnpermitted parameter: :_name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 5.0ms | Allocations: 1323)
+  Rendered pools/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1398)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3219)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 4675)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:08:50 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool A"}, "commit"=>"Create pool"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (0.4ms)[0m  [1m[32mINSERT INTO "pools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pool A"], ["created_at", "2022-01-07 17:08:50.762552"], ["updated_at", "2022-01-07 17:08:50.762552"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (38.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 47ms (ActiveRecord: 38.7ms | Allocations: 2145)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:08:50 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.5ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 2389)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 2786)
+
+
+Started GET "/pools/new??pp=disable" for 127.0.0.1 at 2022-01-07 17:08:58 +0000
+Processing by PoolsController#new as HTML
+  Parameters: {"?pp"=>"disable"}
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 1.0ms | Allocations: 269)
+  Rendered pools/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2185)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 2575)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:09:06 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool B"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (0.4ms)[0m  [1m[32mINSERT INTO "pools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pool B"], ["created_at", "2022-01-07 17:09:06.392120"], ["updated_at", "2022-01-07 17:09:06.392120"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (42.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 53ms (ActiveRecord: 43.6ms | Allocations: 2139)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:09:06 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 561)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2405)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 2802)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:09:17 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool C"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (0.5ms)[0m  [1m[32mINSERT INTO "pools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pool C"], ["created_at", "2022-01-07 17:09:17.102995"], ["updated_at", "2022-01-07 17:09:17.102995"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (42.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 51ms (ActiveRecord: 43.1ms | Allocations: 2137)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:09:17 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 574)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2408)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 2804)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:17:27 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool D"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (2.0ms)[0m  [1m[32mINSERT INTO "pools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pool D"], ["created_at", "2022-01-07 17:17:28.004497"], ["updated_at", "2022-01-07 17:17:28.004497"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (85.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 121ms (ActiveRecord: 94.3ms | Allocations: 4228)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:17:28 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 640)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 2484)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 2881)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:17:35 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool E"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (0.5ms)[0m  [1m[32mINSERT INTO "pools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pool E"], ["created_at", "2022-01-07 17:17:35.359249"], ["updated_at", "2022-01-07 17:17:35.359249"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (67.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 82ms (ActiveRecord: 67.9ms | Allocations: 2138)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:17:35 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 601)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 2435)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.4ms | Allocations: 2831)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-07 17:17:46 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool F"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (0.4ms)[0m  [1m[32mINSERT INTO "pools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pool F"], ["created_at", "2022-01-07 17:17:46.176754"], ["updated_at", "2022-01-07 17:17:46.176754"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (44.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 66ms (ActiveRecord: 44.6ms | Allocations: 2138)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:17:46 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.5ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 614)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2458)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 2856)
+
+
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/pools/62d0037c-f997-4335-aa27-1cc55b9649d4" for 127.0.0.1 at 2022-01-07 17:18:15 +0000
+Processing by PoolsController#show as HTML
+  Parameters: {"id"=>"62d0037c-f997-4335-aa27-1cc55b9649d4"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1081)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/pools_controller.rb:12:in `show'
+Started GET "/pools/62d0037c-f997-4335-aa27-1cc55b9649d4" for 127.0.0.1 at 2022-01-07 17:18:39 +0000
+Processing by PoolsController#show as HTML
+  Parameters: {"id"=>"62d0037c-f997-4335-aa27-1cc55b9649d4"}
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"], ["LIMIT", 1]]
+  ↳ app/controllers/pools_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering pools/show.html.erb within layouts/application
+  Rendered pools/show.html.erb within layouts/application (Duration: 24.3ms | Allocations: 1616)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 1680)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 9.0ms | Allocations: 5598)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3:     <td>Pool Name</td>
+    4:   </tr>
+    5:   <tr>
+    6:   <% @pools.each do |pool| %> 
+    7:     <td><%= pool.name %></td>
+    8:   </tr>
+    9:   <% end %>
+  
+app/views/pools/show.html.erb:6
+Started GET "/pools/62d0037c-f997-4335-aa27-1cc55b9649d4" for 127.0.0.1 at 2022-01-07 17:20:02 +0000
+Processing by PoolsController#show as HTML
+  Parameters: {"id"=>"62d0037c-f997-4335-aa27-1cc55b9649d4"}
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"], ["LIMIT", 1]]
+  ↳ app/controllers/pools_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering pools/show.html.erb within layouts/application
+  Rendered pools/show.html.erb within layouts/application (Duration: 45.4ms | Allocations: 4523)
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 4587)
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 0.4ms | Allocations: 6188)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pool' for #<ActionView::Base:0x00000000017a48>
+Did you mean?  @pool):
+     5:   <tr>
+     6:     <td><%= @pool.name %></td>
+     7:   </tr>
+     8:     <td><%= link_to 'edit', edit_pool_path(pool)%></td>
+     9:     <td><%= link_to 'delete', pools_path(pool), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+    10: 
+    11: </table>
+  
+app/views/pools/show.html.erb:8
+Started GET "/pools/62d0037c-f997-4335-aa27-1cc55b9649d4" for 127.0.0.1 at 2022-01-07 17:20:39 +0000
+Processing by PoolsController#show as HTML
+  Parameters: {"id"=>"62d0037c-f997-4335-aa27-1cc55b9649d4"}
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"], ["LIMIT", 1]]
+  ↳ app/controllers/pools_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering pools/show.html.erb within layouts/application
+  Rendered pools/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 240)
+  Rendered layout layouts/application.html.erb (Duration: 1115.6ms | Allocations: 2285)
+Completed 200 OK in 2903ms (Views: 2899.3ms | ActiveRecord: 0.3ms | Allocations: 3918)
+
+
+Started GET "/pools/62d0037c-f997-4335-aa27-1cc55b9649d4/edit" for 127.0.0.1 at 2022-01-07 17:21:42 +0000
+Processing by PoolsController#edit as HTML
+  Parameters: {"id"=>"62d0037c-f997-4335-aa27-1cc55b9649d4"}
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"], ["LIMIT", 1]]
+  ↳ app/controllers/pools_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pools/edit.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 44.6ms | Allocations: 557)
+  Rendered pools/edit.html.erb within layouts/application (Duration: 125.3ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 132.7ms | Allocations: 2876)
+Completed 200 OK in 148ms (Views: 142.3ms | ActiveRecord: 0.4ms | Allocations: 4501)
+
+
+Started PATCH "/pools/62d0037c-f997-4335-aa27-1cc55b9649d4" for 127.0.0.1 at 2022-01-07 17:21:46 +0000
+Processing by PoolsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool z"}, "id"=>"62d0037c-f997-4335-aa27-1cc55b9649d4"}
+  [1m[36mPool Load (0.5ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"], ["LIMIT", 1]]
+  ↳ app/controllers/pools_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:32:in `update'
+  [1m[36mPool Update (0.5ms)[0m  [1m[33mUPDATE "pools" SET "name" = $1, "updated_at" = $2 WHERE "pools"."id" = $3[0m  [["name", "Pool z"], ["updated_at", "2022-01-07 17:21:46.449320"], ["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"]]
+  ↳ app/controllers/pools_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (80.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:32:in `update'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 90ms (ActiveRecord: 81.2ms | Allocations: 2596)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:21:46 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 752)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2591)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 3114)
+
+
+Started GET "/pools/62d0037c-f997-4335-aa27-1cc55b9649d4/edit" for 127.0.0.1 at 2022-01-07 17:21:52 +0000
+Processing by PoolsController#edit as HTML
+  Parameters: {"id"=>"62d0037c-f997-4335-aa27-1cc55b9649d4"}
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"], ["LIMIT", 1]]
+  ↳ app/controllers/pools_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pools/edit.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 1.4ms | Allocations: 301)
+  Rendered pools/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 376)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 2207)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.4ms | Allocations: 3029)
+
+
+Started PATCH "/pools/62d0037c-f997-4335-aa27-1cc55b9649d4" for 127.0.0.1 at 2022-01-07 17:21:55 +0000
+Processing by PoolsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool A"}, "id"=>"62d0037c-f997-4335-aa27-1cc55b9649d4"}
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"], ["LIMIT", 1]]
+  ↳ app/controllers/pools_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:32:in `update'
+  [1m[36mPool Update (0.4ms)[0m  [1m[33mUPDATE "pools" SET "name" = $1, "updated_at" = $2 WHERE "pools"."id" = $3[0m  [["name", "Pool A"], ["updated_at", "2022-01-07 17:21:55.592616"], ["id", "62d0037c-f997-4335-aa27-1cc55b9649d4"]]
+  ↳ app/controllers/pools_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (52.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:32:in `update'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 63ms (ActiveRecord: 53.7ms | Allocations: 2468)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:21:55 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2453)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 2849)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-07 17:22:04 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2441)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 2830)
+
+

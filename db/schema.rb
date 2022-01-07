@@ -28,10 +28,8 @@ ActiveRecord::Schema.define(version: 2022_01_06_163249) do
 
   create_table "pools", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
-    t.uuid "team_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["team_id"], name: "index_pools_on_team_id"
   end
 
   create_table "predictions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -52,8 +50,10 @@ ActiveRecord::Schema.define(version: 2022_01_06_163249) do
   create_table "teams", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.string "flag_url"
+    t.uuid "pool_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["pool_id"], name: "index_teams_on_pool_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_163249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "pools", "teams"
   add_foreign_key "predictions", "matches"
   add_foreign_key "predictions", "users"
+  add_foreign_key "teams", "pools"
 end
