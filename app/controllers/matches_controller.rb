@@ -6,7 +6,6 @@ class MatchesController < ApplicationController
 
   def index 
     @matchs = Match.all
-    # @pool = Pool.matchs
   end
 
   def show 
@@ -74,7 +73,7 @@ class MatchesController < ApplicationController
   private
 
   def set_match
-    @match = Match.find(params[:id])
+    @match = Match.find(params[:id]) 
   end
 
   def set_pool
