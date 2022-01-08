@@ -1,0 +1,13 @@
+<%= form_with model: pool do |form|%>
+  <div>
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name %>
+    <% if pool.errors[:name] %>
+      <span style='color: red'><%= pool.errors[:name][0] %></span>
+    <% end %>
+  </div>
+
+<button class="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 rounded ">
+    <%= form.submit 'Create pool' %>
+  </button>
+<% end %>

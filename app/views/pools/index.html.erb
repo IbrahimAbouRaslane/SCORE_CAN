@@ -1,0 +1,12 @@
+<%= link_to 'Back', :back %>
+<table>
+  <tr>
+    <td>Pool Name</td>
+  </tr>
+  <tr>
+  <% @pools.each do |pool| %> 
+    <td><%= pool.name %></td>
+  </tr>
+  <% end %>
+
+</table>
