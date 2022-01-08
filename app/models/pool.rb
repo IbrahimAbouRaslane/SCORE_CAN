@@ -1,3 +1,4 @@
 class Pool < ApplicationRecord
-  belongs_to :team
+  has_many :teams
+  has_many :matches
 end

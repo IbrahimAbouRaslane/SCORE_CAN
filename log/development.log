@@ -878,3 +878,506 @@ Started GET "/packs/js/application-72cdcd9f4871cd190c11.js" for 127.0.0.1 at 202
   
 ActionController::RoutingError (No route matches [GET] "/packs/js/application-72cdcd9f4871cd190c11.js"):
   
+Started GET "/" for 127.0.0.1 at 2022-01-07 09:35:03 +0000
+  
+ActiveRecord::NoDatabaseError (connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "ScoreCan_development" does not exist
+):
+  
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `public_send'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:926:in `checkout_new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:905:in `try_to_checkout_new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:866:in `acquire_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:588:in `checkout'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:428:in `connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:1128:in `retrieve_connection'
+activerecord (6.1.4.4) lib/active_record/connection_handling.rb:327:in `retrieve_connection'
+activerecord (6.1.4.4) lib/active_record/connection_handling.rb:283:in `connection'
+activerecord (6.1.4.4) lib/active_record/migration.rb:611:in `connection'
+activerecord (6.1.4.4) lib/active_record/migration.rb:606:in `build_watcher'
+activerecord (6.1.4.4) lib/active_record/migration.rb:588:in `block in call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (180.4ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_development" ENCODING = 'unicode'[0m
+  [1m[35m (133.5ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_test" ENCODING = 'unicode'[0m
+  [1m[35m (44.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (42.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to EnablePgCrypto (20220106115131)
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (92.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106115131"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMatches (20220106143745)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (61.8ms)[0m  [1m[35mCREATE TABLE "matches" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "date" timestamp, "team_a_id" integer, "team_b_id" integer, "score_a" integer, "score_b" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106143745"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20220106155408)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106155408"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePredictions (20220106163150)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (42.3ms)[0m  [1m[35mCREATE TABLE "predictions" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "score_a" integer, "score_b" integer, "points" integer, "predicted_result" integer, "is_good_result" boolean, "is_exact_score" boolean, "match_id" uuid NOT NULL, "user_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_efbcaaab9d"
+FOREIGN KEY ("match_id")
+  REFERENCES "matches" ("id")
+, CONSTRAINT "fk_rails_7eed2ccc94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_match_id" ON "predictions" ("match_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_user_id" ON "predictions" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163150"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20220106163228)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.1ms)[0m  [1m[35mCREATE TABLE "teams" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "flag_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163228"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePools (20220106163249)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (42.7ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "team_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b772931f2f"
+FOREIGN KEY ("team_id")
+  REFERENCES "teams" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_pools_on_team_id" ON "pools" ("team_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163249"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-07 09:36:08.156753"], ["updated_at", "2022-01-07 09:36:08.156753"]]
+  [1m[36mTRANSACTION (39.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-01-07 09:36:35 +0000
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/djeneka/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/djeneka/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.7ms | Allocations: 333)
+Completed 200 OK in 28ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 2880)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:36:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 607)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 38.9ms | Allocations: 7544)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 102.2ms | Allocations: 25954)
+Completed 200 OK in 149ms (Views: 106.6ms | ActiveRecord: 9.0ms | Allocations: 33152)
+
+
+Started GET "/packs/js/application-72cdcd9f4871cd190c11.js" for 127.0.0.1 at 2022-01-07 09:36:51 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-72cdcd9f4871cd190c11.js"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:02 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 610)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 20.1ms | Allocations: 4844)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 8684)
+Completed 200 OK in 67ms (Views: 44.5ms | ActiveRecord: 4.4ms | Allocations: 16575)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:06 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1006)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2762)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3352)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:07 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2755)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3340)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:09 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2755)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 3342)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:10 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 2763)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 3351)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:10 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2753)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 3328)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:11 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2753)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3328)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:12 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2753)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3327)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:42:12 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2759)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3334)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 09:44:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2753)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3327)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 10:13:37 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 2753)
+Completed 200 OK in 13ms (Views: 11.3ms | Allocations: 3326)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 10:36:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 2753)
+Completed 200 OK in 21ms (Views: 19.4ms | Allocations: 3326)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 10:47:42 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2753)
+Completed 200 OK in 10ms (Views: 8.7ms | Allocations: 3326)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 11:04:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 2753)
+Completed 200 OK in 17ms (Views: 13.4ms | Allocations: 3326)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-01-07 11:21:38 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 140)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1781)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3539)
+Completed 200 OK in 14ms (Views: 12.7ms | Allocations: 4721)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 11:21:42 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1008)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 2765)
+Completed 200 OK in 20ms (Views: 19.4ms | Allocations: 3343)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-01-07 11:23:02 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1050)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 2804)
+Completed 200 OK in 17ms (Views: 16.2ms | Allocations: 3317)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 11:23:11 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 2755)
+Completed 200 OK in 17ms (Views: 16.5ms | Allocations: 3331)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 12:30:31 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 2759)
+Completed 200 OK in 26ms (Views: 20.0ms | Allocations: 3334)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 12:46:05 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 2753)
+Completed 200 OK in 36ms (Views: 33.4ms | Allocations: 3326)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 15:01:40 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 2753)
+Completed 200 OK in 32ms (Views: 23.6ms | Allocations: 3326)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 16:08:52 +0000
+  
+Zeitwerk::NameError (expected file /Users/djeneka/Formation_Techshelter/SCORE_CAN/app/helpers/matches_helper.rb to define constant MatchesHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:00:06 +0000
+  
+Zeitwerk::NameError (expected file /Users/djeneka/Formation_Techshelter/SCORE_CAN/app/helpers/matches_helper.rb to define constant MatchesHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:00:52 +0000
+  
+Zeitwerk::NameError (expected file /Users/djeneka/Formation_Techshelter/SCORE_CAN/app/helpers/matches_helper.rb to define constant MatchesHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:00:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1962)
+  Rendered layout layouts/application.html.erb (Duration: 60.8ms | Allocations: 13122)
+Completed 200 OK in 433ms (Views: 66.8ms | ActiveRecord: 193.4ms | Allocations: 22434)
+
+
+Started GET "/matches" for 127.0.0.1 at 2022-01-07 18:01:16 +0000
+  
+Zeitwerk::NameError (expected file /Users/djeneka/Formation_Techshelter/SCORE_CAN/app/helpers/matches_helper.rb to define constant MatchesHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/matches_controller.rb:1:in `<main>'
+Started GET "/matches" for 127.0.0.1 at 2022-01-07 18:02:10 +0000
+Processing by MatchesController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 829)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:02:10 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1026)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2846)
+Completed 200 OK in 123ms (Views: 6.9ms | ActiveRecord: 106.0ms | Allocations: 7600)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:02:12 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2806)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3383)
+
+
+Started GET "/matches" for 127.0.0.1 at 2022-01-07 18:02:18 +0000
+Processing by MatchesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 225)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:02:18 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 2808)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 3392)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:02:44 +0000
+  
+Zeitwerk::NameError (expected file /Users/djeneka/Formation_Techshelter/SCORE_CAN/app/helpers/matches_helper.rb to define constant MatchesHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:02:45 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1073)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2891)
+Completed 200 OK in 25ms (Views: 8.0ms | ActiveRecord: 6.0ms | Allocations: 7618)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:02:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2806)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3383)
+
+
+Started GET "/matches" for 127.0.0.1 at 2022-01-07 18:02:58 +0000
+Processing by MatchesController#index as HTML
+Completed 404 Not Found in 24ms (ActiveRecord: 3.1ms | Allocations: 2168)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pool without an ID):
+  
+app/controllers/matches_controller.rb:81:in `set_pool'
+Started GET "/matches" for 127.0.0.1 at 2022-01-07 18:03:34 +0000
+  
+Zeitwerk::NameError (expected file /Users/djeneka/Formation_Techshelter/SCORE_CAN/app/helpers/matches_helper.rb to define constant MatchesHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/matches_controller.rb:1:in `<main>'
+Started GET "/matches" for 127.0.0.1 at 2022-01-07 18:03:36 +0000
+Processing by MatchesController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 831)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:03:36 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1026)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 2847)
+Completed 200 OK in 38ms (Views: 22.9ms | ActiveRecord: 3.9ms | Allocations: 7576)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:03:39 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2806)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3384)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:03:41 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 999)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 2819)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 3395)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-01-07 18:14:29 +0000
+  
+Zeitwerk::NameError (expected file /Users/djeneka/Formation_Techshelter/SCORE_CAN/app/helpers/matches_helper.rb to define constant MatchesHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
