@@ -13,6 +13,7 @@ class MatchesController < ApplicationController
   def show 
     @match = set_match
     @pool = @match.pool
+    @prediction = Prediction.new
   end
 
   def new 

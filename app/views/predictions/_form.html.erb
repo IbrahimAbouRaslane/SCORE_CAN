@@ -1,21 +1,26 @@
 <%= form_with model: [pool, match, prediction] do |form|%>
-  <%#= form.hidden_field :pool_id, value: pool.id %>
-  <%#= form.hidden_field :match_id, value: match.id %>
-  <div>
-      <div>
-        <div class="field flex justify-center">
-          <%=form.label @match.team_a.name %>
-          <%#= image_tag(@match.team_a.flag_url, class: "flag") %> :
-          <%= form.number_field :score_a %>
+  <div class="">
+      <div class="">
+        <div class="flex justify-center px-5 w-full">
+          <div class="w-4/5 flex justify-start ">
+            <%=form.label @match.team_a.name %>
+          </div>
+          <div class="w-1/5 overflow-hidden border-2 border-green-300">
+            <%= form.number_field :score_a %>
+          </div>
+        </div> <br>
+        <div class="flex justify-center px-5 w-full">
+          <div class="w-4/5 flex justify-start ">
+            <%=form.label @match.team_b.name %>
+          </div>
+          <div class="w-1/5 overflow-hidden border-2 border-green-300">
+            <%= form.number_field :score_b %>
+          </div>
         </div>
-        <div class="field flex justify-center">
-          <%=form.label @match.team_b.name %>
-          <%#= image_tag(@match.team_b.flag_url, class: "flag") %> :
-          <%= form.number_field :score_b %>
-        </div>
+
     </div>
-    <div>
-      <%= form.submit 'valider', class: "w-full text-center py-3 rounded bg-indigo-600 text-white hover:bg-green focus:outline-none"  %>
+    <div  class="py-2">
+      <%= form.submit 'valider', class: "w-2/3 text-center py-3 rounded-lg bg-green-600 text-white hover:bg-indigo-200 focus:outline-none"  %>
     </div>
   </div>
 <%end%>
