@@ -1,0 +1,2 @@
+class Leaderbord < ApplicationRecord
+end

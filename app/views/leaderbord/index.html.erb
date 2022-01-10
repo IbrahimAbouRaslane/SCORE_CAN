@@ -1,0 +1,13 @@
+<table class='table'>
+  ...
+  <% rank = 1 %>  
+  <% @users.each do |u| %>
+    <tr>
+      <td><%= rank %></td>
+      <td><%= u.name %></td>
+      <td><%= u.get_points_sum %></td>
+ 
+    </tr>
+    <% rank += 1 %>
+  <% end %>
+</table>
