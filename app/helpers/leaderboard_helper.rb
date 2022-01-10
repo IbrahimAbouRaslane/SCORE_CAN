@@ -1,2 +1,2 @@
-module LeaderbordHelper
+module LeaderboardHelper
 end

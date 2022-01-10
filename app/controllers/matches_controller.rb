@@ -1,12 +1,12 @@
 class MatchesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_pool
-  before_action :set_team
-  before_action :set_match
+  # before_action :authenticate_user!
+  # before_action :set_pool
+  # before_action :set_team
+  # before_action :set_match
 
   def index 
-    @matchs = Match.all
-    # @pool = Pool.matchs
+    @matchs = set_pool
+    @pool = set_pool.matches
   end
 
   def show 
