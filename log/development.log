@@ -26156,3 +26156,170 @@ Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 202
 ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
   
   [1m[36mPrediction Load (7.8ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions" ORDER BY "predictions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePools (20220105163228)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (96.1ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePools (20220105163228)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePools (20220105163228)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (54.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (534.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_development"[0m
+  [1m[35m (360.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_test"[0m
+  [1m[35m (3876.9ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_development" ENCODING = 'unicode'[0m
+  [1m[35m (1048.6ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_test" ENCODING = 'unicode'[0m
+  [1m[35m (172.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (109.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePools (20220105163228)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (450.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_development"[0m
+  [1m[35m (338.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_test"[0m
+  [1m[35m (1296.1ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_development" ENCODING = 'unicode'[0m
+  [1m[35m (1137.8ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_test" ENCODING = 'unicode'[0m
+  [1m[35m (153.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (141.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePools (20220105163228)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (356.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_development"[0m
+  [1m[35m (302.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ScoreCan_test"[0m
+  [1m[35m (1042.4ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_development" ENCODING = 'unicode'[0m
+  [1m[35m (1057.6ms)[0m  [1m[35mCREATE DATABASE "ScoreCan_test" ENCODING = 'unicode'[0m
+  [1m[35m (208.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (119.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556650452009280170)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to EnablePgCrypto (20220105163228)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (170.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220105163228"]]
+  [1m[36mTRANSACTION (24.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePools (20220106115131)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (165.3ms)[0m  [1m[35mCREATE TABLE "pools" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106115131"]]
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMatches (20220106143745)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (77.3ms)[0m  [1m[35mCREATE TABLE "matches" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "date" timestamp, "team_a_id" uuid, "team_b_id" uuid, "score_a" integer DEFAULT 0, "score_b" integer DEFAULT 0, "pool_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0675200631"
+FOREIGN KEY ("pool_id")
+  REFERENCES "pools" ("id")
+)[0m
+  [1m[35m (68.8ms)[0m  [1m[35mCREATE INDEX "index_matches_on_team_a_id" ON "matches" ("team_a_id")[0m
+  [1m[35m (51.0ms)[0m  [1m[35mCREATE INDEX "index_matches_on_team_b_id" ON "matches" ("team_b_id")[0m
+  [1m[35m (54.7ms)[0m  [1m[35mCREATE INDEX "index_matches_on_pool_id" ON "matches" ("pool_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106143745"]]
+  [1m[36mTRANSACTION (21.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20220106155408)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (129.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "email" character varying DEFAULT '' NOT NULL, "full_name" character varying DEFAULT '' NOT NULL, "phone" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (54.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (54.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106155408"]]
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePredictions (20220106163150)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (62.0ms)[0m  [1m[35mCREATE TABLE "predictions" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "score_a" integer, "score_b" integer, "points" integer, "predicted_result" integer, "is_good_result" boolean, "is_exact_score" boolean, "match_id" uuid NOT NULL, "user_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_efbcaaab9d"
+FOREIGN KEY ("match_id")
+  REFERENCES "matches" ("id")
+, CONSTRAINT "fk_rails_7eed2ccc94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (54.1ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_match_id" ON "predictions" ("match_id")[0m
+  [1m[35m (54.8ms)[0m  [1m[35mCREATE INDEX "index_predictions_on_user_id" ON "predictions" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163150"]]
+  [1m[36mTRANSACTION (16.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20220106163249)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (102.1ms)[0m  [1m[35mCREATE TABLE "teams" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "flag_url" character varying, "pool_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0f545fe9e7"
+FOREIGN KEY ("pool_id")
+  REFERENCES "pools" ("id")
+)[0m
+  [1m[35m (43.0ms)[0m  [1m[35mCREATE INDEX "index_teams_on_pool_id" ON "teams" ("pool_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106163249"]]
+  [1m[36mTRANSACTION (22.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-10 09:16:06.634740"], ["updated_at", "2022-01-10 09:16:06.634740"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556650452009280170)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/pools" for 127.0.0.1 at 2022-01-10 09:35:25 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (11.7ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 39.1ms | Allocations: 1446)
+  Rendered layout layouts/application.html.erb (Duration: 761.4ms | Allocations: 34739)
+Completed 200 OK in 893ms (Views: 761.8ms | ActiveRecord: 13.5ms | Allocations: 40281)
+
+
+Started GET "/pools/new" for 127.0.0.1 at 2022-01-10 09:47:06 +0000
+Processing by PoolsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/new.html.erb within layouts/application
+  Rendered pools/_form.html.erb (Duration: 2296.1ms | Allocations: 3100)
+  Rendered pools/new.html.erb within layouts/application (Duration: 2314.0ms | Allocations: 3407)
+  Rendered layout layouts/application.html.erb (Duration: 2486.0ms | Allocations: 5325)
+Completed 200 OK in 2634ms (Views: 2487.3ms | ActiveRecord: 112.4ms | Allocations: 9659)
+
+
+Started POST "/pools" for 127.0.0.1 at 2022-01-10 09:47:13 +0000
+Processing by PoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pool"=>{"name"=>"Pool A"}, "commit"=>"Create pool"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mPool Create (101.4ms)[0m  [1m[32mINSERT INTO "pools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pool A"], ["created_at", "2022-01-10 09:47:13.804421"], ["updated_at", "2022-01-10 09:47:13.804421"]]
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (35.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pools_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:5000/pools
+Completed 302 Found in 148ms (ActiveRecord: 137.2ms | Allocations: 3152)
+
+
+Started GET "/pools" for 127.0.0.1 at 2022-01-10 09:47:13 +0000
+Processing by PoolsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pools/index.html.erb within layouts/application
+  [1m[36mPool Load (0.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools"[0m
+  ↳ app/views/pools/index.html.erb:7
+  Rendered pools/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2607)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 3071)
+
+
