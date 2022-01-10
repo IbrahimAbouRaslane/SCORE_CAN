@@ -1,9 +1,9 @@
 <%#= render partial: 'form', locals: {match: @match}%>
 <%= link_to "New match", new_pool_match_path(@pool) %>
 <table>
+  <% @pool.matches.each do |match| %> 
   <tr>
-    <% @matches.each do |match| %> 
-    <td> <%= match.date&.strftime("%A %D") %></td>
+    <!-- <td> <%#= match.date&.strftime("%A %D") %></td> -->
       <td><%= image_tag(match.team_a.flag_url, width: 30, class: "flag") %> <%= match.team_a.name %></td>
       <% if current_user %>
       <td><%= match.score_a %>:<%= match.score_b %></td>

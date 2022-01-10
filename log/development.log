@@ -17672,3 +17672,577 @@ Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 202
 ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
   
   [1m[36mPrediction Load (7.8ms)[0m  [1m[34mSELECT "predictions".* FROM "predictions" ORDER BY "predictions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:02:18 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (1.4ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (0.5ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (2.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 50.8ms | Allocations: 14970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 124.7ms | Allocations: 31451)
+Completed 200 OK in 377ms (Views: 118.5ms | ActiveRecord: 121.2ms | Allocations: 41078)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:02:19 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:02:55 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.2ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (0.6ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (2.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 29.5ms | Allocations: 7367)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 11342)
+Completed 200 OK in 46ms (Views: 29.3ms | ActiveRecord: 9.6ms | Allocations: 13373)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:02:55 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:32 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.2ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (0.5ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (5.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (2.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 32.3ms | Allocations: 7366)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 11342)
+Completed 200 OK in 51ms (Views: 26.9ms | ActiveRecord: 15.2ms | Allocations: 13372)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:32 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:34 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.6ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (1.6ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (4.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (2.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 35.0ms | Allocations: 7085)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 10859)
+Completed 200 OK in 48ms (Views: 25.4ms | ActiveRecord: 16.8ms | Allocations: 12083)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:35 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:35 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.2ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (1.9ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (2.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 37.9ms | Allocations: 7080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 10854)
+Completed 200 OK in 51ms (Views: 34.9ms | ActiveRecord: 10.9ms | Allocations: 12076)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:35 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:36 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.2ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (2.0ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 28.8ms | Allocations: 7079)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 10842)
+Completed 200 OK in 42ms (Views: 27.0ms | ActiveRecord: 9.4ms | Allocations: 12064)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:36 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:36 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (0.9ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (2.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 36.1ms | Allocations: 7080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.4ms | Allocations: 10854)
+Completed 200 OK in 63ms (Views: 49.1ms | ActiveRecord: 7.1ms | Allocations: 12076)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:37 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:38 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.2ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (2.8ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (1.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (4.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (2.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (2.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 40.5ms | Allocations: 7079)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 10858)
+Completed 200 OK in 52ms (Views: 30.6ms | ActiveRecord: 18.1ms | Allocations: 12080)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:38 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:38 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.2ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (1.5ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (3.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (3.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 31.4ms | Allocations: 7079)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 10853)
+Completed 200 OK in 42ms (Views: 24.2ms | ActiveRecord: 13.3ms | Allocations: 12076)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:39 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:39 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.8ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (0.4ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (4.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 56.9ms | Allocations: 7091)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 75.1ms | Allocations: 10854)
+Completed 200 OK in 100ms (Views: 73.0ms | ActiveRecord: 7.7ms | Allocations: 12077)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:39 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:40 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.6ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (4.8ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 34.9ms | Allocations: 7080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 10854)
+Completed 200 OK in 47ms (Views: 29.5ms | ActiveRecord: 13.5ms | Allocations: 12076)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:40 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:48 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.1ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (2.2ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (1.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (2.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (3.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 7079)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 10842)
+Completed 200 OK in 52ms (Views: 31.4ms | ActiveRecord: 14.0ms | Allocations: 12064)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:48 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:03:48 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.3ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (46.8ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (1.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (8.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (5.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (4.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (9.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (3.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (76.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 177.1ms | Allocations: 7080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 188.6ms | Allocations: 10851)
+Completed 200 OK in 251ms (Views: 33.3ms | ActiveRecord: 156.2ms | Allocations: 12074)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:03:49 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
+Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches" for 127.0.0.1 at 2022-01-10 09:04:04 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"1de27947-0c36-455c-b0ab-645fecc71f3b"}
+  [1m[36mPool Load (0.2ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  [1m[36mCACHE Pool Load (0.0ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "1de27947-0c36-455c-b0ab-645fecc71f3b"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:86:in `set_pool'
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  [1m[36mMatch Load (2.9ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."pool_id" = $1[0m  [["pool_id", "1de27947-0c36-455c-b0ab-645fecc71f3b"]]
+  ↳ app/views/matches/index.html.erb:4
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "1ead5a67-96a4-48fa-a283-370a5635aa49"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "c8eb8759-d151-42e8-952f-fddd0710fb13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "822cde8c-8eae-4513-b6a5-8ace3ead2d13"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mTeam Load (1.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "a427b03b-e90f-4d51-b8fe-5174dd8ed37f"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "5720036f-2c25-48cd-a147-8ea850ed1bf7"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "029e5f8f-44ef-44fa-9387-2088117b200b"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:7
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", "417a455f-f478-4f6b-a69b-fc46e0595c3c"], ["LIMIT", 1]]
+  ↳ app/views/matches/index.html.erb:13
+  Rendered matches/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 7079)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 10856)
+Completed 200 OK in 40ms (Views: 25.7ms | ActiveRecord: 10.9ms | Allocations: 12078)
+
+
+Started GET "/packs/js/application-d6cc1e2bbce2c01225a3.js" for 127.0.0.1 at 2022-01-10 09:04:04 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-d6cc1e2bbce2c01225a3.js"):
+  
