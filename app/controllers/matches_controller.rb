@@ -12,6 +12,7 @@ class MatchesController < ApplicationController
 
   def show 
     @match = set_match
+    @pool = @match.pool
   end
 
   def new 
