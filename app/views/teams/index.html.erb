@@ -1,8 +1,7 @@
-<%= link_to 'Back', :back %>
+<%= link_to 'Back', :back %> | <%= link_to "add team", new_pool_team_path %>
 <table>
   <tr>
-    <td>team </td>
-    <td>pool</td>*
+    <td><%= @pool.name%></td>
   </tr>
   <tr>
   <% @teams.each do |team| %> 

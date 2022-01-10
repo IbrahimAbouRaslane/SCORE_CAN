@@ -1,0 +1,23 @@
+<%= form_with model: [pool,match] do |form| %>
+<%= form.hidden_field :pool_id, value: pool.id %>
+<div class="max-w-lg mx-auto mt-52 text-center max-w-sm rounded overflow-hidden shadow-lg p-10">
+  <div class="field">
+    <%=form.select :team_a_id, Team.all.collect {|team_a| [ team_a.name, team_a.id ] } %>
+    <%= form.number_field :score_a %>
+  </div> <br>
+  
+  <div class="field">
+    <%=form.select :team_b_id, Team.all.collect {|team_b| [ team_b.name, team_b.id ] } %>
+    <%= form.number_field :score_b %>
+  </div>
+  <div class="field">
+    <%=form.date_select :date %>
+  </div>
+
+  <%# if match.persisted? %>
+  <%#= form.submit 'Update Match', class: "w-full text-center py-3 rounded bg-indigo-600 text-white hover:bg-green-dark focus:outline-none"  %>
+  <%# else %>
+  <%= form.submit 'Add Match', class: "w-full text-center py-3 rounded bg-indigo-600 text-white hover:bg-green-dark focus:outline-none"  %>
+  <%# end %>
+  <%end%>
+</div>
