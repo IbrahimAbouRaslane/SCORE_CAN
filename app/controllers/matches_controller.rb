@@ -1,12 +1,13 @@
 class MatchesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_pool
-  before_action :set_team
-  before_action :set_match
+  # before_action :authenticate_user!
+  # before_action :set_pool
+  # before_action :set_team
+  # before_action :set_match
 
   def index 
-    @matchs = Match.all
-    # @pool = Pool.matchs
+    # @matches = Match.all
+    @pool = set_pool
+    @matches= set_pool.matches
   end
 
   def show 
@@ -14,12 +15,14 @@ class MatchesController < ApplicationController
   end
 
   def new 
-    if current_user.admin == true
-      @match = Match.new
-    else
-      flash[:error] = "You are not authorize to create a match"
-    end
-    @matchs = Match.all
+    # @match = Match.new
+    # if @match.save #current_user.admin == true
+    #   redirect_to pool_matches_path
+    # else
+    #   flash[:error] = "You are not authorize to create a match"
+    # end
+    # @matchs = Match.all
+    @match = set_pool.matches.build
   end
 
   def edit 
@@ -28,29 +31,30 @@ class MatchesController < ApplicationController
     if current_user.admin == true
     else
       flash[:error] = "You are not authorized"
-      redirect_to pool_team_matches_path(@pool, @team, @current_user)
+      redirect_to pool_matches_path(@pool)
     end
   end
 
   def create 
-    @pool = set_pool
-    @team = set_team
-    if current_user.admin == true 
-      @match = current_user.matchs.build(match_params)
+    #if current_user #current_user.admin == true 
+      @match = set_pool.matches.build(match_params)
+      # raise set_pool.inspect
+      # raise match_params.inspect
       if @match.save 
-        redirect_to pool_team_matches_path(@pool, @team, @current_user), notice:'Match was succesfully created'
+        redirect_to pool_matches_path, notice:'Match was succesfully created'
       else
+        # raise @match.errors.inspect
         flash[:error]= "Match was not created"
         render 'new'
       end
-    end
+    #end
   end
 
   def update 
     if current_user.admin == true 
       @match = set_match
       if @match.update(match_params)
-        redirect_to pool_team_match_path(@pool, @team, @current_user), notice:'Match was succesfully updated'
+        redirect_to pool_matches_path(@pool, @current_user),notice:'Match was succesfully updated'
       else 
         flash[:error]="Match was not updated"
         render 'edit'
@@ -62,11 +66,12 @@ class MatchesController < ApplicationController
   end
 
   def destroy
-    if current_user.admin == true
+    if current_user #current_user.admin == true
       @match.destroy
       else
         flash[:error]="you are not authorized to be here"
-        redirect_to pool_team_matches_path(@pool, @team, @current_user)
+        # redirect_to pool_team_matches_path(@pool, @team, @current_user)
+        redirect_to pool_matches_path(@pool, @current_user)
     end
     
   end 
@@ -78,13 +83,13 @@ class MatchesController < ApplicationController
   end
 
   def set_pool
-    @pool = Pool.find(params[:id])
+    @pool = Pool.find(params[:pool_id])
   end
   def set_team
-    @team = Team.find(params[:id])
+    @team = Team.find(params[:team_id])
   end
 
   def match_params
-    params.require(:match).permit(:team_a, :team_b, :score_a, :score_b, :team_a_id, :team_b_id)
+    params.require(:match).permit(:team_a, :team_b, :score_a, :score_b, :team_a_id, :team_b_id, :pool_id, :date)
   end
 end

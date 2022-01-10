@@ -18,12 +18,16 @@ ActiveRecord::Schema.define(version: 2022_01_06_163249) do
 
   create_table "matches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "date"
-    t.integer "team_a_id"
-    t.integer "team_b_id"
-    t.integer "score_a"
-    t.integer "score_b"
+    t.uuid "team_a_id"
+    t.uuid "team_b_id"
+    t.integer "score_a", default: 0
+    t.integer "score_b", default: 0
+    t.uuid "pool_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["pool_id"], name: "index_matches_on_pool_id"
+    t.index ["team_a_id"], name: "index_matches_on_team_a_id"
+    t.index ["team_b_id"], name: "index_matches_on_team_b_id"
   end
 
   create_table "pools", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -68,6 +72,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_163249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "matches", "pools"
   add_foreign_key "predictions", "matches"
   add_foreign_key "predictions", "users"
   add_foreign_key "teams", "pools"
