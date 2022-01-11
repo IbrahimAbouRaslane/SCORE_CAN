@@ -2,11 +2,14 @@
   .h-s{
     height: 27%;
   }
+  .bgk-color{
+    background-color: #E15007 ;
+  }
 </style>
 <div class="px-2 h-screen overflow-hidden">
   <div class=" relative h-s">
-    <div class="bg-red-500 rounded-lg h-full">
-      <%= image_tag"path56.png", class:"w-52 bg-center" %>
+    <div class="bgk-color rounded-lg h-full">
+      <%= image_tag"path56.png", class:"w-52 bg-center"%>
     </div>
     <div class="w-full -bottom-12 absolute px-2">
       <div class="w-full shadow-md rounded-lg py-2 bg-white">
@@ -27,17 +30,21 @@
     </div>
   </div>
   <div class="pt-14 text-center text-2xl text-gray-500 ">
-    <h1> Prédire un match</h1>
+    <h1 class="text-vert-color"> Prédire un match</h1>
+    <% if current_user #current_user.admin == true%>
+      <a href=" <%= edit_pool_match_path(@pool, @match) %>"> <i class="fas fa-edit"></i></a>
+    <%end%>
   </div>
-  <div class="pt-20 text-center text-2xl text-gray-500 h-2/5">
-    <!-- <h1> formulaire de prédictions ici</h1> -->
+  <div class="pt-18 text-center text-2xl text-gray-500 h-2/5">
     <%= render partial: 'predictions/form', locals: {pool: @pool, match: @match, prediction: @prediction }%>
   </div>
 
   <div class="bottom-0 text-center text-2xl text-gray-500 h-4/5 flex justify-center">
-
-    <h1 class="pt-10"> 
+    <h1 class="pt-5"> 
       <%= image_tag"logots.png", class:"w-52" %>
     </h1>
+    <div class="text-base">
+      <%= link_to "Retour", pool_matches_path%>
+    </div>
   </div>
 </div>
