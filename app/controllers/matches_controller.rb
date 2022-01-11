@@ -5,9 +5,8 @@ class MatchesController < ApplicationController
   # before_action :set_match
 
   def index 
-    # @matches = Match.all
-    @pool = set_pool
-    @matches= set_pool.matches
+    @matchs = set_pool
+    @pool = set_pool.matches
   end
 
   def show 

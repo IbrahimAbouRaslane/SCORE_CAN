@@ -42336,6 +42336,7 @@ Completed 200 OK in 43ms (Views: 28.8ms | ActiveRecord: 4.3ms | Allocations: 775
 
 <<<<<<< HEAD
 >>>>>>> 8051c712840362d9ba2c66b60dcc8f4400fa84fa
+<<<<<<< HEAD
 =======
 Started GET "/pools/1de27947-0c36-455c-b0ab-645fecc71f3b/matches/e5216cf6-d0c5-467c-87d4-3160e8fd5be5/" for 127.0.0.1 at 2022-01-10 16:26:31 +0000
 Processing by MatchesController#show as HTML
@@ -45172,3 +45173,57 @@ puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
 puma (5.5.2) lib/puma/server.rb:447:in `process_client'
 puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+=======
+Started GET "/pools/90f43130-e974-4a00-981d-211557671af0/matches" for 127.0.0.1 at 2022-01-10 16:57:57 +0000
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"90f43130-e974-4a00-981d-211557671af0"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "68bdf2e1-8249-4740-a802-c7ae1920ba68"], ["LIMIT", 1]]
+  [1m[36mPool Load (0.6ms)[0m  [1m[34mSELECT "pools".* FROM "pools" WHERE "pools"."id" = $1 LIMIT $2[0m  [["id", "90f43130-e974-4a00-981d-211557671af0"], ["LIMIT", 1]]
+  ↳ app/controllers/matches_controller.rb:82:in `set_pool'
+Completed 404 Not Found in 162ms (ActiveRecord: 16.8ms | Allocations: 13870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Team without an ID):
+  
+app/controllers/matches_controller.rb:85:in `set_team'
+Started GET "/" for 127.0.0.1 at 2022-01-10 16:58:09 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 262.5ms | Allocations: 17222)
+  Rendered layout layouts/application.html.erb (Duration: 267.8ms | Allocations: 19754)
+Completed 200 OK in 277ms (Views: 273.0ms | ActiveRecord: 0.0ms | Allocations: 21263)
+
+
+Started GET "/pools/90f43130-e974-4a00-981d-211557671af0/matches" for 127.0.0.1 at 2022-01-10 16:58:34 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"90f43130-e974-4a00-981d-211557671af0"}
+  Rendering layout layouts/application.html.erb
+  Rendering matches/index.html.erb within layouts/application
+  Rendered matches/index.html.erb within layouts/application (Duration: 31.9ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 1285)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.0ms | Allocations: 3618)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"matches", :pool_id=>nil}, missing required keys: [:pool_id]):
+    1: <%#= render partial: 'form', locals: {match: @match}%>
+    2: <%= link_to "New match", new_pool_match_path(@pool) %> <br>
+    3: <div class="px-4">
+    4:   <%= render partial: "match", collection: @matches%>
+    5: </div>
+  
+app/views/matches/index.html.erb:2
+Started GET "/pools/90f43130-e974-4a00-981d-211557671af0/matches" for 127.0.0.1 at 2022-01-10 16:59:27 +0000
+Processing by MatchesController#index as HTML
+  Parameters: {"pool_id"=>"90f43130-e974-4a00-981d-211557671af0"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 6010)
+
+
+  
+NoMethodError (undefined method `matchs' for Pool:Class):
+  
+app/controllers/matches_controller.rb:9:in `index'
+>>>>>>> 61affa3e38603ca7c8602124f834d82759870e22
