@@ -17,6 +17,13 @@
       <%= link_to pool.name, pool_matches_path(pool,pool.matches) %>
   </div>
   </button>
+    <a href=" <%=new_pool_match_path(pool) %>">
+      <td><%= pool.name %></td>
+    </a>
+    <% if current_user #current_user.admin == true %>
+      <%= link_to "#{pool.name} add match", new_pool_match_path(pool) %>
+    <%end%>
+  </tr>
   <% end %>
 
   </div>
