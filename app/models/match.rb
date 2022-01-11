@@ -10,7 +10,7 @@ class Match < ApplicationRecord
 
 
   def predictable?
-    if DateTime.now < self.date
+    if DateTime.now <= self.date 
       true
     else
       false

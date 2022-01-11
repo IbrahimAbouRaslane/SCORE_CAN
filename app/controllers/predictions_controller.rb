@@ -36,7 +36,7 @@ class PredictionsController < ApplicationController
   def create 
     @prediction = set_match.predictions.build(prediction_params.merge(user_id: current_user.id))
     if @prediction.save
-      redirect_to pool_match_predictions_path(set_pool, set_match),notice: 'Prediction was successfully created.'
+      redirect_to pool_matches_path(set_pool),notice: 'Prediction was successfully created.'
     else
       flash[:error]="Prediction not created"
       render 'new'

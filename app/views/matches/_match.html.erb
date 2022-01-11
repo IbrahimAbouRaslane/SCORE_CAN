@@ -8,7 +8,7 @@
       <% if match.finished? == true %>
         <%= match.score_a %>:<%= match.score_b %>
       <% else %>
-        <p> <%=match.start_at %></p>
+        <p> <%=match.start_at&.strftime("%H: %M") %></p>
         
       <%end%>
     </div>
