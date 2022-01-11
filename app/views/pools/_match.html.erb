@@ -1,0 +1,20 @@
+<div class=" w-full shadow rounded-lg my-4 py-2">
+  <a href="" class="flex items-center justify-between">
+    <div class="flex justify-between items-center w-2/5 p-2">
+      <%= match.team_a.name %>
+      <%= image_tag(match.team_a.flag_url, width: 30, class: "flag") %>
+    </div>
+    <div class="flex justify-center items-center w-1/5 p-2">
+      <% if match.finished? == true %>
+        <%= match.score_a %>:<%= match.score_b %>
+      <% else %>
+        <p> <%=match.start_at&.strftime("%H:%M") %></p>
+        
+      <%end%>
+    </div>
+    <div class="flex justify-between items-center w-2/5 p-2">
+      <%= image_tag(match.team_b.flag_url, class: "flag", width: 30, ) %>
+      <%= match.team_b.name %>
+    </div>
+  </a>
+</div>

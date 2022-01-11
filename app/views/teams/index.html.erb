@@ -1,11 +1,11 @@
 <%= link_to 'Back', :back %> | <%= link_to "add team", new_pool_team_path %>
-<table>
+<table class="flex flex-row justify-center items-center">
   <tr>
     <td><%= @pool.name%></td>
   </tr>
   <tr>
   <% @teams.each do |team| %> 
-    <td class="m-2 flex items-center justify-between"><%= image_tag(team.flag_url,width: 30) %><%= team.name %></td>
+    <td class="m-2  flex items-center justify-between"><%= image_tag(team.flag_url,width: 30) %><%= team.name %></td>
   <% end %>
   </tr>
 

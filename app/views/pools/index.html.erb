@@ -1,5 +1,5 @@
-<%= link_to 'Back', :back %> | <%= link_to "add pool", new_pool_path %>
-<div class="">
+<%=link_to 'Back', :back %> | <%= link_to "add pool", new_pool_path %>
+<div class="overflow-hidden w-full h-full">
 <div class='w-full flex justify-center'>
       <%= image_tag "logo.png", class: "w-36" %>
     </div>
@@ -12,12 +12,44 @@
   </div>
   <div class="m-5 grid grid-cols-6 space-x-2">
   <% @pools.each do |pool| %> 
-  <button class=" border-2 border-green-600 flex justify-center text-black font-bold py-2 px-4 rounded">
+  <button class=" mt-2 border-2 border-green-600 flex justify-center text-black font-bold py-2 px-4 rounded">
   <div>
-      <%= pool.name %>
+      <%= link_to pool.name, pool_matches_path(pool,pool.matches) %>
   </div>
   </button>
   <% end %>
+
   </div>
+</div>
+  <div class="px-4">
+      <% @matches.each do |match| %>
+        <%if  match.date.strftime("%m/%d/%Y") == DateTime.now.strftime("%m/%d/%Y")%>
+          <div class=" w-full shadow rounded-lg my-4 py-2">
+  <a href="<%= pool_match_path(match.team_a.pool,match) %>" class="flex items-center justify-between">
+    <div class="flex justify-between items-center w-2/5 p-2">
+      <%= match.team_a.name %>
+      <%= image_tag(match.team_a.flag_url, width: 30, class: "flag") %>
+    </div>
+    <div class="flex justify-center items-center w-1/5 p-2">
+      <% if match.finished? == true %>
+        <%= match.score_a %>:<%= match.score_b %>
+      <% else %>
+        <p> <%=match.start_at&.strftime("%H:%M") %></p>
+        
+      <%end%>
+    </div>
+    <div class="flex justify-between items-center w-2/5 p-2">
+      <%= image_tag(match.team_b.flag_url, class: "flag", width: 30, ) %>
+      <%= match.team_b.name %>
+    </div>
+  </a>
+</div>
+        <% end%>
+      <% end%>
+</div>
+<div class="bottom-0 text-center text-2xl text-gray-500 h-3/5 flex justify-center">
+  <h1 class="pt-5"> 
+    <%= image_tag"logots.png", class:"w-52" %>
+  </h1>
 </div>
 

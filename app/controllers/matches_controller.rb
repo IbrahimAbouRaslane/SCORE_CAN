@@ -5,8 +5,9 @@ class MatchesController < ApplicationController
   # before_action :set_match
 
   def index 
-    @matchs = set_pool
-    @pool = set_pool.matches
+    # @matches = Match.all
+    @pool = set_pool
+    @matches= set_pool.matches
   end
 
   def show 
@@ -98,6 +99,6 @@ class MatchesController < ApplicationController
   end
 
   def match_params
-    params.require(:match).permit(:team_a, :team_b, :score_a, :score_b, :team_a_id, :team_b_id, :pool_id, :date)
+    params.require(:match).permit(:team_a, :team_b, :score_a, :score_b, :team_a_id, :team_b_id, :pool_id, :date, :start_at)
   end
 end

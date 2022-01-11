@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_153909) do
 
   create_table "matches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "date"
+    t.time "start_at"
     t.uuid "team_a_id"
     t.uuid "team_b_id"
     t.integer "score_a", default: 0
@@ -44,7 +45,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_153909) do
   create_table "predictions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.integer "score_a"
     t.integer "score_b"
-    t.integer "points"
+    t.integer "points", default: 0
     t.integer "predicted_result"
     t.boolean "is_good_result"
     t.boolean "is_exact_score"

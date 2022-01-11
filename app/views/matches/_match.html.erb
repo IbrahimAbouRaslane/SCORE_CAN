@@ -5,10 +5,10 @@
       <%= image_tag(match.team_a.flag_url, width: 30, class: "flag") %>
     </div>
     <div class="flex justify-center items-center w-1/5 p-2">
-      <% if current_user %>
+      <% if match.finished? == true %>
         <%= match.score_a %>:<%= match.score_b %>
       <% else %>
-        <p> vs </p>
+        <p> <%=match.start_at&.strftime("%H:%M") %></p>
         
       <%end%>
     </div>
