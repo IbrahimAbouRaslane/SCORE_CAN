@@ -1,10 +1,12 @@
 class PoolsController < ApplicationController
   def index
+    # @match = set_match
     @pools = Pool.all
   end
 
   def new
-    @pool = Pool.new()
+    @pool = set_pool.matches.build
+    # @pool = Pool.new()
   end
 
   def show
@@ -46,7 +48,13 @@ class PoolsController < ApplicationController
 
 
   private 
+  def set_pool
+    @pool = Pool.find(params[:pool_id])
+  end
 
+  def set_match
+    @match = Match.find(params[:id])
+  end
   def pool_params
     params.require(:pool).permit(:name)
   end

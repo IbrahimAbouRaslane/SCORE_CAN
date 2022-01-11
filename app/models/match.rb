@@ -8,6 +8,7 @@ class Match < ApplicationRecord
     self.date = DateTime.now
   end
 
+
   def predictable?
     if DateTime.now < self.date
       true
@@ -16,7 +17,8 @@ class Match < ApplicationRecord
     end
   end
   def finished?
-    if self.score_a && self.score_b
+  #  raise self.inspect
+    if Time.now >= self.start_at + 6300 && DateTime.now == self.date #self.score_a && self.score_b && 
       true
     else
       false

@@ -5,18 +5,34 @@
 </style>
 <%= form_with model: [pool,match] do |form| %>
 <%= form.hidden_field :pool_id, value: pool.id %>
+<div class=" text-center text-2xl">
+  <h2>Créer un match</h2>
+</div>
 <div class="max-w-lg mx-auto mt-52 text-center max-w-sm rounded overflow-hidden shadow-lg p-10">
-  <div class="field">
-    <%=form.select :team_a_id, Team.all.collect {|team_a| [ team_a.name, team_a.id ] } %>
-    <%= form.number_field :score_a %>
+  <div class="flex justify-center px-5 w-full">
+    <div class="w-4/5 flex justify-start ">
+      <%=form.select :team_a_id, Team.all.collect {|team_a| [ team_a.name, team_a.id ] } %>
+    </div>
+    <div class="w-1/5 overflow-hidden border-1 border-green-300">
+      <%= form.number_field :score_a %>
+    </div>
   </div> <br>
   
-  <div class="field">
-    <%=form.select :team_b_id, Team.all.collect {|team_b| [ team_b.name, team_b.id ] } %>
-    <%= form.number_field :score_b %>
+  <div class="flex justify-center px-5 w-full">
+    <div class="w-4/5 flex justify-start ">
+      <%=form.select :team_b_id, Team.all.collect {|team_b| [ team_b.name, team_b.id ] } %>
+    </div>
+    <div class="w-1/5 overflow-hidden border-1 border-green-300">
+      <%= form.number_field :score_b %>
+    </div>
   </div>
-  <div class="field">
-    <%=form.date_select :date %>
+  <div class="flex justify-center px-5 w-full">
+    <div class="w-4/5 flex justify-start">
+      <%=form.date_field :date %>
+    </div>
+  </div>
+  <div class="w-full flex justify-center overflow-hidden border-1 border-green-300">
+    <%= form.time_field :start_at%>
   </div>
 
   <%# if match.persisted? %>

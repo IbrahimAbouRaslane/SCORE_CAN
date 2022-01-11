@@ -5,7 +5,12 @@
   </tr>
   <tr>
   <% @pools.each do |pool| %> 
-    <td><%= pool.name %></td>
+    <a href=" <%=new_pool_match_path(pool) %>">
+      <td><%= pool.name %></td>
+    </a>
+    <% if current_user #current_user.admin == true %>
+      <%= link_to "#{pool.name} add match", new_pool_match_path(pool) %>
+    <%end%>
   </tr>
   <% end %>
 
