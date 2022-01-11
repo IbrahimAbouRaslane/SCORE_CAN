@@ -58,6 +58,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'redis', '~> 4.0'
 gem 'sidekiq'
 gem 'devise'
+#phone confiramtion gem
+gem 'phonelib'
+gem 'twilio-ruby', '~> 5.62.0'
 
 group :development, :test do
   gem 'rspec-rails'

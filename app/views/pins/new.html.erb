@@ -1,0 +1,6 @@
+<%= form_for @pin, remote: true do |f| %>
+    <div class="form-group">
+      <%= f.text_field :pin %>
+    </div>
+    <%= f.submit "Confirmer" %>
+<% end %>

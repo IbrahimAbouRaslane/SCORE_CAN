@@ -4,19 +4,12 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :full_name %><br />
-    <%= f.text_field :full_name, autofocus: true %>
+          <%= f.text_field :full_name, placeholder:'Votre nom', class: 'w-full outline-none  rounded px-3 py-2 mb-5 mr-5 border border-green-500' %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email, autofocus: true %>
-  </div>  
-
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone, autofocus: true %>
- </div>  
+  <<div class="field">
+          <%= f.text_field :phone, placeholder:'Numéro de téléphone', class: 'w-full outline-none  rounded px-3 py-2 mb-5 mr-5 border border-green-500' %>
+  </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
