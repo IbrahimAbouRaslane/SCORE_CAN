@@ -1,0 +1,48 @@
+<style>
+  .h-s{
+    height: 27%;
+  }
+  .bgk-color{
+    background-color: #E15007 ;
+  }
+</style>
+<div class="px-2 h-screen overflow-hidden">
+  <div class=" relative h-s">
+    <div class="bgk-color rounded-lg h-full">
+      <%= image_tag"path56.png", class:"w-52 bg-center"%>
+    </div>
+    <div class="w-full -bottom-12 absolute px-2">
+      <div class="w-full shadow-md rounded-lg py-2 bg-white">
+        <div class="flex w-full justify-between">
+          <div class="w-2/5 p-2">
+            <%= image_tag(@match.team_a.flag_url, width: 55, class: "flag") %>
+            <%= @match.team_a.name %>
+          </div>
+          <div class="w-1/5 p-2">
+              <%#= @match.score_a %>VS<%#= @match.score_b %>
+          </div>
+          <div class=" w-2/5 p-2 ml-10">
+            <%= image_tag(@match.team_b.flag_url, class: "flag", width: 55, ) %>
+            <%= @match.team_b.name %>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div class="pt-14 text-center text-2xl text-gray-500 ">
+    <h1 class="text-vert-color"> Mettre à jour le score</h1>
+  </div>
+  <div class="pt-14 text-center text-2xl text-gray-500 h-2/5">
+    <%= render partial: 'majscore', locals: {pool: @pool, match: @match }%>
+  </div>
+
+  <div class="bottom-0 text-center text-2xl text-gray-500 h-4/5 flex justify-center">
+
+    <h1 class="pt-10"> 
+      <%= image_tag"logots.png", class:"w-52" %>
+    </h1>
+    <div class="text-base">
+      <%= link_to "Retour", pool_match_path%>
+    </div>
+  </div>
+</div>

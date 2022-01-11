@@ -13,7 +13,12 @@ class MatchesController < ApplicationController
   def show 
     @match = set_match
     @pool = @match.pool
-    @prediction = Prediction.new
+    if current_user #current_user.admin == true
+      @prediction = Prediction.new
+    else
+      flash[:notice] = " CONNECT YOU BEFORE"
+      redirect_to user_session
+    end
   end
 
   def new 
@@ -28,12 +33,13 @@ class MatchesController < ApplicationController
   end
 
   def edit 
+    @match = set_match
     @pool = set_pool
-    @team = set_team
-    if current_user.admin == true
+    # @team = set_team
+    if current_user #current_user.admin == true
     else
       flash[:error] = "You are not authorized"
-      redirect_to pool_matches_path(@pool)
+      redirect_to pool_match_path(@pool,@match)
     end
   end
 
@@ -53,17 +59,18 @@ class MatchesController < ApplicationController
   end
 
   def update 
-    if current_user.admin == true 
+    if current_user #current_user.admin == true 
       @match = set_match
+      @pool = set_pool
       if @match.update(match_params)
-        redirect_to pool_matches_path(@pool, @current_user),notice:'Match was succesfully updated'
+        redirect_to pool_match_path(@pool,@match),notice:'Match was succesfully updated'
       else 
         flash[:error]="Match was not updated"
         render 'edit'
       end
     else 
       flash[:error]="you are not authorized to be here"
-      redirect_to pool_team_match_path(@pool, @team, @current_user)
+      redirect_to pool_match_path(@pool, @match)
     end
   end
 

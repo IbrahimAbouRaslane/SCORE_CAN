@@ -11,7 +11,7 @@
 </style>
 <%= form_with model: [pool, match, prediction] do |form|%>
   <div class="">
-      <div class="">
+      <div class=" pt-4">
         <div class="flex justify-center px-5 w-full">
           <div class="w-4/5 flex justify-start ">
             <%=form.label @match.team_a.name %>
@@ -30,7 +30,7 @@
         </div>
 
     </div>
-    <div class="py-2">
+    <div class="py-5">
       <%= form.submit 'valider', class: "w-2/3 text-center py-3 rounded-lg bg-vert-color text-white hover:bg-indigo-200 focus:outline-none sub-color"  %>
     </div>
   </div>
