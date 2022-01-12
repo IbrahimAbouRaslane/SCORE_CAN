@@ -1,4 +1,4 @@
 .vendor/
 # Don’t check in credentials
-# config/env.yml
-# tmp/
+config/env.yml
+tmp/
